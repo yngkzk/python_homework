@@ -2,8 +2,8 @@
 fdn = input("Enter five digit number: ")
 x = int(fdn)
 n = x % 10
-f = str(n)
-r = x // 10
+f = str(n)   # VN: ну это математически только наполовину
+r = x // 10  # используйте "говорящие" имена для переменных - так код будет самодокументированным
 t = str(r)
 result = f + t
 print("Your result is: ", result)
