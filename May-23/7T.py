@@ -6,6 +6,6 @@ year = input("Year: ")
 month = input("Month: ")
 day = input("Day: ")
 year, month, day = str(year), str(month), str(day)
-form = "Your date of birth is: '%s.%s.%s' "
+form = "Your date of birth is: '0%s.0%s.%s' "
 result = form % (day, month, year)
 print(result)
