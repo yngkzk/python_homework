@@ -7,7 +7,9 @@ try:
 except ValueError as err:
     message = ("Incorrect data", err)
 else:
-    formula = diam * (3.14 / sides)
+    degree = 3.14 / sides
+    sin_angle = degree - degree ** 3 / 6 + degree ** 5 / 120 - degree ** 7 / 5040
+    formula = diam * sin_angle
     form = ("Your length of the side is %.2f")
     message = form % formula
 print(message)
