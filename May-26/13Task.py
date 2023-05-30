@@ -1,5 +1,5 @@
 print("This programm will show you the length of the side of the shape that you want")
-user_in_diam = input("Enter the diameter of the circumscribed circle (cm):")
+user_in_diam = input("Enter the diameter of the circumscribed circle (cm): ")
 user_in_sides = input("Enter the quantity of the sides: ")
 try:
     diam = float(user_in_diam)
