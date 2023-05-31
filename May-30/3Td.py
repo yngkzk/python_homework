@@ -8,10 +8,10 @@ except NameError as Nerr:
     print("Incorrect data: " + Nerr + ". You have to enter a number!")
 except TypeError:
     print("Incorrect data! You have to enter a number!")
-if year / 100 == year // 100:
+if year / 100 == year // 100: # Постоянная ошибка с NameError
     msg = "It is not a leap year."
 elif year / 4 == year // 4:
     msg = "It is a leap year."
 else:
-    msg = "It is not a leap year."
+    msg = "It is not a leap year." 
 print(msg)
