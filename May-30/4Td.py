@@ -6,6 +6,7 @@ try:
     second = users_word[1]
     fourth = users_word[3]
     fifth = users_word[4]
+    length = len(users_word)
 except ValueError:
     msg = "Incorrect data, you have to enter a word!"
 except IndexError:
@@ -14,6 +15,10 @@ except NameError as Nerr:
     print("Incorrect data: " + Nerr + ". You have to enter a word!")
 if first == fifth and second == fourth:
     msg = "Your word is palindrome"
+elif length > 5:
+    print("Your word has more, than 5 letters.")
+elif length < 5:
+    print("Your word has less, than 5 letters.")
 else:
     first != fifth or second != fourth
     msg = "Your word is not palindrome"
