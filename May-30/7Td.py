@@ -12,7 +12,9 @@ except ValueError:
     msg = "Incorrect data. You have to enter numbers!"
 except NameError as Nerr:
     msg = "Incorrect data.", Nerr
-if squareS > circleS:
+if p == str(user_in_squ) or c = str(user_in_cir):
+    msg = "Incorrect data. You have to enter a number!"
+elif squareS > circleS:
     msg = "You can fit a circle inside a square."
 elif squareS < circleS:
     msg = "You can not fit a circle inside a square."

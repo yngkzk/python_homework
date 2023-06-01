@@ -6,7 +6,9 @@ except ValueError:
     msg = "Incorrect data."
 except NameError as Nerr:
     msg = "Incorrect data: ", Nerr
-if 200 < amount < 300:
+if amount == str(user_in):
+    msg = "Incorrect data: " + user_in + ", You have to enter a number!"
+elif 200 < amount < 300:
     discount = amount * 0.03
     result = amount - discount
     msg = "You have to pay: "

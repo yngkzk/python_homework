@@ -13,9 +13,9 @@ except NameError as Nerr:
     msg = "Incorrect data.", Nerr
 if t1 == "c":
     score += 2
-if t2 == "b":
+elif t2 == "b":
     score += 2
-if t3 == "b":
+elif t3 == "b":
     score += 2
 else:
     print("Result.")
