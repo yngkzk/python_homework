@@ -11,7 +11,9 @@ except ValueError:
     msg = "Incorrect data. You have to enter numbers!"
 except NameError as Nerr:
     msg = "Incorrect data.", Nerr
-if t1 == "c":
+if user_test_1 == int(user_test_1) or user_test_2 == int(user_test_2):
+    
+elif t1 == "c":
     score += 2
 elif t2 == "b":
     score += 2
