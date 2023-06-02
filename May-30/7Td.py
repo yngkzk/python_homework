@@ -19,7 +19,7 @@ elif squareS > circleS:
 elif squareS < circleS:
     msg = "You can not fit a circle inside a square."
 elif squareS == circleS:
-    msg = "The area of the circle and the square is equal."
+    msg = "The area of the circle and the square are equal."
 else:
     msg = "Result."
 print(msg)
