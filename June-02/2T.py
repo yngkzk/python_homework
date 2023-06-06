@@ -1,4 +1,4 @@
-def get_sum(user_in = None):
+def get_sum(user_in):
     if int(user_in):
         if int(num) > 0:
             print(num)
@@ -11,4 +11,4 @@ def get_sum(user_in = None):
         return "No input entered."
 print("This program shows the sum of the numbers from 0 to the entered number.")
 user_in = input("Enter the number: ")
-print(get_sum(user_in or ""))
+print(get_sum(user_in))

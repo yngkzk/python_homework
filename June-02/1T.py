@@ -1,4 +1,4 @@
-def get_ints_from_user(user_in1 = None, user_in2 = None):
+def get_ints_from_user(user_in1, user_in2):
     if float(user_in1) and float(user_in2):
         if user_in1 > user_in2:
             message = "1"
