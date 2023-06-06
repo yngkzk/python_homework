@@ -10,8 +10,8 @@ except ValueError:
     msg = "Incorrect data."
 except NameError as Nerr:
     print("Incorrect data: " + Nerr + ". You have to enter a value!")
-if usd == str(user_in):
-    msg = "Incorrect data: " + user_in + ", You have to enter a number!"
+if user_in == str(user_in):
+    msg = "Incorrect data: '" + user_in + "', You have to enter a number!"
 elif usd < 0:
     msg = "Value can not be negative."
 elif user_in_cur == "EUR":
