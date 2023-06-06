@@ -25,3 +25,5 @@ elif d1 != d2 and d1 != d3:
 else:
     msg = "Result."
 print(msg)
+
+# VN: if d1 == d2 or d2 == d3 or d1 == d1:
