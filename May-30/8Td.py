@@ -9,12 +9,13 @@ try:
     user_test_3 = int(user_test_3)
 except ValueError:
     msg = "Incorrect data. You have to enter numbers!"
-if user_test_1 == 3:
-    score += 2
-elif user_test_2 == 8:
-    score += 2
-elif user_test_3 == 180:
-    score += 2
 else:
-    print("Result.")
+    if user_test_1 == 3:
+        score += 2
+    if user_test_2 == 8:
+        score += 2
+    if user_test_3 == 180:
+        score += 2
+    else:
+        print("Result.")
 print("Your score: ", score)
