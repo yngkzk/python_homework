@@ -3,6 +3,8 @@ user_in_squ = input("Enter the periemeter of the square: ")
 user_in_cir = input("Enter the circumference: ")
 
 try:
+    user_in_squ = float(user_in_squ)
+    user_in_cir = float(user_in_cir)
     p = float(user_in_squ)
     C = float(user_in_cir)
     squareS = (p / 4) ** 2
@@ -12,9 +14,7 @@ except ValueError:
     msg = "Incorrect data. You have to enter numbers!"
 except NameError as Nerr:
     msg = "Incorrect data.", Nerr
-if user_in_squ == str(user_in_squ) or user_in_cir == str(user_in_cir):
-    msg = "Incorrect data. You have to enter a number!"
-elif squareS > circleS:
+if squareS > circleS:
     msg = "You can fit a circle inside a square."
 elif squareS < circleS:
     msg = "You can not fit a circle inside a square."
