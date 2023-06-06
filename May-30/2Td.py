@@ -1,5 +1,6 @@
 print("This program shows if your number has the same digits")
 user_in = input("Enter there your a 3-digit number: ")
+
 try:
     user_in = int(user_in)
     un = user_in

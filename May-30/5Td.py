@@ -1,9 +1,11 @@
 print("This program converts the currency from USD to EUR, UAN or AZN.")
 user_in = input("Enter your value in USD: ")
 user_in_cur = input("Enter the currency to which you want to transfer (EUR, UAN or AZN): ")
+
 UAN = 7.1068
 AZN = 1.69
 EUR = 0.936899799
+
 try:
     user_in = float(user_in)
 except ValueError:

@@ -1,5 +1,6 @@
 print("This program shows a discount that depends on the amount of your purchases.")
 user_in = input("Enter there amount of your purchases: ")
+
 try:
     user_in = int(user_in)
 except ValueError:
