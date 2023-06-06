@@ -8,8 +8,6 @@ try:
     d3 = user_in % 10
 except ValueError:
     msg = "Incorrect data, you have to enter a 3-digit number!"
-except NameError as Nerr:
-    msg = "Incorrect data: " + Nerr + ". You have to enter a 3-digit number!"
 if user_in == str(user_in):
     msg = "Incorrect data: " + user_in + ". You have to enter a 3-digit number!"
 elif d1 == d2 and d1 == d3:
