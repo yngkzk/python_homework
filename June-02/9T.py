@@ -7,11 +7,5 @@ def sum_divisors(num, i=1, total=0): # В интернете посмотрел,
     if num % i == 0:
         total += i
     return sum_divisors(num, i+1, total)
-    if int(num) < 1:
-        return False
-    else:
-        return "Result"
-    return sum_divisors(num)
-
-num = sum_divisors(28)
+num = sum_divisors(6)
 print(num)
