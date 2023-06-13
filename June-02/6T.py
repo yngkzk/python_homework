@@ -1,9 +1,7 @@
-def get_time(user_in1 = None, user_in2 = None, user_in3 = None):
-    user_in1 = str(user_in1).zfill(1)
-    user_in2 = str(user_in2).zfill(1)
-    user_in3 = str(user_in3).zfill(1)
-    # VN: Не получится работать с этой функцией, когда 0 часов, 0 минут и 0 секунд
-    if int(user_in1) or int(user_in2) or int(user_in3):
+def get_time(user_in1=0, user_in2=0, user_in3=0):
+    if user_in1 == 0 and user_in2 == 0 and user_in3 == 0:
+        return "Your time in the format: 00:00:00."
+    elif user_in1 and user_in2 and user_in3:
         if int(user_in1) < 10:
             hours   = "0" + str(user_in1)
         else:
@@ -26,4 +24,4 @@ print("This program converts your data into a string in this format 'hh:mm:ss'."
 user_in1 = input("Enter a hour: ")
 user_in2 = input("Enter a minute: ")
 user_in3 = input("Enter a second: ")
-print(get_time(user_in1 or "", user_in2 or "", user_in3 or ""))
+print(get_time(user_in1, user_in2, user_in3))
