@@ -1,3 +1,5 @@
+# VN: Функция называется get_ints_from_user, а занимается она объединением цифр в число.
+# Название не соответствует реальности
 def get_ints_from_user(user_in1, user_in2, user_in3):
     operation = str(user_in1) + str(user_in2) + str(user_in3)
     final_num = int(operation)

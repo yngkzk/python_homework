@@ -2,6 +2,7 @@ def get_time(user_in1 = None, user_in2 = None, user_in3 = None):
     user_in1 = str(user_in1).zfill(1)
     user_in2 = str(user_in2).zfill(1)
     user_in3 = str(user_in3).zfill(1)
+    # VN: Не получится работать с этой функцией, когда 0 часов, 0 минут и 0 секунд
     if int(user_in1) or int(user_in2) or int(user_in3):
         if int(user_in1) < 10:
             hours   = "0" + str(user_in1)

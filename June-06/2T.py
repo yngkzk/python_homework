@@ -2,6 +2,8 @@ def get_day_of_the_week(answer, num = 1):
     if answer == "yes":
         if num == 1:
             print("The day of the week: Monday.")
+            # VN: Много повторяющегося кода. Подумайте, как можно вынести некоторые строки за пределы if так
+            # чтобы он был написан всего один раз
             answer = input("You want to continue? (yes/no): ")
             return get_day_of_the_week(answer, num+1)
         if num == 2:

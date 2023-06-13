@@ -12,3 +12,7 @@ def get_multiplication_table(number, multiplier=2):
 print("This program shows multiplication table from 2 to 9. Enter a number between 1 and 10.")
 user_in = int(input("Enter the number: "))
 get_multiplication_table(user_in)
+
+# VN: Условие задачи не выполнено:
+# Вывести таблицу умножения для всех чисел от 2 до 9
+#                               ^^^^

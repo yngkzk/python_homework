@@ -1,6 +1,7 @@
 def get_sum(user_in):
     if int(user_in):
         if int(num) > 0:
+        # VN: Здесь программа падает - нет переменной с именем num
             print(num)
             return num + get_sum(num-1)
         else:

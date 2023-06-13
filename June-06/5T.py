@@ -29,6 +29,7 @@ def game(my_random, min, max, attempts=7):
             return attempt(user_in)
 
 def attempt(answer):
+    # VN: Неважно сколько игр - загаданное число всегда одно и то же. Не интересно :(
     if answer == "yes":
         return game(num, 0, 30)
     if answer == "yep":
