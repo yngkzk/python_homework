@@ -8,7 +8,7 @@ try:
 except ValueError:
     msg = "Incorrect data. You have to enter numbers!"
 else:
-    p = float(user_in_squ)
+    p = float(user_in_squ)  # VN: какой смысл дублировать преобразования, которые уже сделаны в 6 и 7 строках?
     C = float(user_in_cir)
     squareS = (p / 4) ** 2
     circleR = C / 2 * 3.14 

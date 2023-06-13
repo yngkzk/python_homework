@@ -6,7 +6,7 @@ try:
 except ValueError:
     msg = "Incorrect data."
 else:
-    amount = int(user_in)
+    amount = int(user_in)  # VN: user_in уже типа int после 5 строки
     if 200 < amount < 300:
         discount = amount * 0.03
         result = amount - discount
