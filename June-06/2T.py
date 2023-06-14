@@ -1,35 +1,22 @@
 def get_day_of_the_week(answer, num = 1):
     if answer == "yes":
         if num == 1:
-            print("The day of the week: Monday.")
-            # VN: Много повторяющегося кода. Подумайте, как можно вынести некоторые строки за пределы if так
-            # чтобы он был написан всего один раз
-            answer = input("You want to continue? (yes/no): ")
-            return get_day_of_the_week(answer, num+1)
+            message = "The day of the week: Monday."
         if num == 2:
-            print("The day of the week: Tuesday.")
-            answer = input("You want to continue? (yes/no): ")
-            return get_day_of_the_week(answer, num+1)
+            message = "The day of the week: Tuesday."
         if num == 3:
-            print("The day of the week: Wednesday.")
-            answer = input("You want to continue? (yes/no): ")
-            return get_day_of_the_week(answer, num+1)
+            message = "The day of the week: Wednesday."
         if num == 4:
-            print("The day of the week: Thursday.")
-            answer = input("You want to continue? (yes/no): ")
-            return get_day_of_the_week(answer, num+1)
+            message = "The day of the week: Thursday."
         if num == 5:
-            print("The day of the week: Friday.")
-            answer = input("You want to continue? (yes/no): ")
-            return get_day_of_the_week(answer, num+1)
+            message = "The day of the week: Friday."
         if num == 6:
-            print("The day of the week: Saturday.")
-            answer = input("You want to continue? (yes/no): ")
-            return get_day_of_the_week(answer, num+1)
+            message = "The day of the week: Saturday."
         if num == 7:
-            print("The day of the week: Sunday.")
-            answer = input("You want to continue? (yes/no): ")
-            return get_day_of_the_week(answer, num-6)
+            message = "The day of the week: Sunday."
+        print(message)
+        answer = input("You want to continue? (yes/no): ")
+        return get_day_of_the_week(answer, num+1)
     else:
         print("Result.")
 print("This program shows days of the weeks.")
