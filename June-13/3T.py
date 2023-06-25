@@ -63,3 +63,5 @@ print(Calculator.subtraction(6, 5))
 print(Calculator.multiplication(2, 7))
 print(Calculator.division(6, 2))
 
+# VN: Нет создания экземпляра класса. Получается, что все методы у вас статические,
+# и self внутри методов используется просто как число - один из аргументов
