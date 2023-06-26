@@ -1,4 +1,5 @@
 from room import Room
+from order import Order
 
 
 class Hotel:
@@ -20,16 +21,15 @@ class Hotel:
         money = visitor.pay(price)
         if money:
             self.balance += money
-            Room.order = True
             message = 'You have booked a room!'
-            message += 'Room N%s, from %s - to %s, visitor: %s' % (room_number, date_from, date_to, visitor.name)
+            message += '  Room N%s, from %s - to %s, visitor: %s' % (room_number, date_from, date_to, visitor.name)
             return message
         else:
             return 'You have not enough money!'
 
     def check_in(self, visitor, date):
-        if date == self.date_from - self.date_to:
-            message = 'Welcome %s, your room N%s.' % (visitor, Room.number)
+        if visitor.iin == Order.visitor_iin:
+            message = 'Welcome %s, your room N%s. To date %s.' % (visitor, Room.number, date)
             print(message)
             Room.show_info(self)
         else:
