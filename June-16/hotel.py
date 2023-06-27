@@ -26,12 +26,16 @@ class Hotel:
             return message
         else:
             return 'You have not enough money!'
+        # VN: в этом методе buy_order() как раз и нужно создавать экземпляр класса Order, и отдавать его либо посетителю,
+        # либо сохранять в список броней в самом отеле
 
     def check_in(self, visitor, date):
         if visitor.iin == Order.visitor_iin:
+            # VN:         ^^^^^ здесь обращение к самому классу, а не к его экземпляру. Ошибка
             message = 'Welcome %s, your room N%s. To date %s.' % (visitor, Room.number, date)
             print(message)
             Room.show_info(self)
+            #^^^^ здесь тоже
         else:
             print("You don't have pass")
 
