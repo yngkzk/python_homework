@@ -8,6 +8,7 @@ class Room:
 
     def is_empty(self, date=None):
         if date == Order.date_from:
+            # VN:  ^^^^^ здесь обращение не к экземпляру, а к самому классу, т.е. просто к шаблону. Ошибка
             message = 'No suitable rooms for this day'
             return message
         else:

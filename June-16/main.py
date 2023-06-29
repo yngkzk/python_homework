@@ -11,6 +11,8 @@ test.show()
 rixos = Hotel('Rixos')
 print(rixos.get_price(1, 2, 5))
 print(Room.is_empty(3))
+# VN: ^^^^^ обращение к классу, т.е. к шаблону комнаты, а не к конкретной комнате. Ошибка
+# вам сначала нужно создать конкретные экземпляры комнат
 print(rixos.buy_order(1, 2, 5, test))
 
 print(rixos.check_in(test, 3))
