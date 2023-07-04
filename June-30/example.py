@@ -17,3 +17,8 @@ print(len(result))
 
 newresult = ', '.join(result)
 print(newresult)
+
+space = '      hallo      \n'
+print(space)
+cut = space.strip()
+print(cut)
