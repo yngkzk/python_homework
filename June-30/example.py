@@ -4,3 +4,16 @@ print(value)
 
 value2 = sentence.find('seashells', 0, 9)
 print(value2)
+
+word = 'hallo'
+wo = word.rjust(10, '-')
+rd = wo.ljust(15, '-')
+print(rd)
+
+name = 'Bla Blanov Blanovich'
+result = name.split()
+print(result)
+print(len(result))
+
+newresult = ', '.join(result)
+print(newresult)
