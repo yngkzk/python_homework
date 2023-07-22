@@ -16,4 +16,3 @@ for letter in text:
 
 with open('text.txt', 'w', encoding='utf-8') as my_file:
     my_file.write(empty_text)
-    
