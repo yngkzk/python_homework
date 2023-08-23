@@ -31,8 +31,3 @@ for u in range(M):
         if max_number is None or A[y][u] > max_number:
             max_number = A[y][u]
     print(max_number, f'max number in {u + 1} vertical line \n')
-
-
-
-
-
