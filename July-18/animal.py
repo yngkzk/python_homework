@@ -27,6 +27,8 @@ class Animal:
 class Herbivore(Animal):
     def __init__(self, name, weight, size):
         super().__init__(name, weight, size)
+    # VN: если вы в конструкторе ничего нового не делаете, то можете его вообще не писать - будет автоматически
+    # вызываться конструктор родительского класса
 
     def __repr__(self):
         info = 'Herbivore name: %s, weight and size: %dkg & %dm' % (self.name, self.weight, self.size)
@@ -34,9 +36,12 @@ class Herbivore(Animal):
 
     def talk(self):
         return super().talk()
+    # VN: то же самое и с методами - не нужно их переопределять, если они должны работать так же, как и родительские
 
     def eat(self, food):
         ratio = ['leaf', 'grass', 'plants']
+        # VN:   ^^^^^^^^^^^^^^^^^^^^^^^^^^^ по условию задачи этот список должен быть в конструкторе,
+        # и передаваться в него в качестве аргумента
         if food in ratio:
             return super().eat(food)
         return 'You can not eat this'
@@ -52,8 +57,11 @@ class Predator(Animal):
 
     def talk(self):
         return super().talk()
+    # VN: ну вы поняли) Хотя для хищников можно сделать "Rrrrrr!"
 
     def eat(self, animal):
+        # VN: Тут нужна проверка isinstance, чтобы убедиться, что animal здесь действительно является
+        # экземпляром класса Animal. Иначе попытка обратиться к animal.weight приведёт к падению
         if animal.weight < self.weight:
             self.weight += animal.weight * 0.2
             if animal.size < self.size:
@@ -65,6 +73,7 @@ class Predator(Animal):
 class Goose(Herbivore):
     def __init__(self, name, weight, size):
         super().__init__(name, weight, size)
+    # VN: нет смысла в переопределении этого конструктора
 
     def __repr__(self):
         info = 'Goose name: %s, weight and size: %dkg & %dm' % (self.name, self.weight, self.size)
@@ -75,11 +84,13 @@ class Goose(Herbivore):
 
     def eat(self, food):
         return super().eat(food)
+    # VN: нет смысла в переопределении этого метода
 
 
 class Wolf(Predator):
     def __init__(self, name, weight, size):
         super().__init__(name, weight, size)
+    # VN: нет смысла в переопределении этого конструктора
 
     def __repr__(self):
         info = 'Wolf name: %s, weight and size: %dkg & %dm' % (self.name, self.weight, self.size)
@@ -90,6 +101,7 @@ class Wolf(Predator):
 
     def eat(self, animal):
         return super().eat(animal)
+    # VN: нет смысла в переопределении этого метода
 
 
 my_animal = Animal('Wolf', 24, 7)
@@ -116,3 +128,5 @@ my_wolf = Wolf('Qasqyr', 32, 21)
 print(my_wolf)
 print(my_wolf.talk())
 print(my_wolf.eat(my_goose))
+
+# VN: если создать много волков, то они смогут есть по почереди одного и того же гуся. Исправьте это
