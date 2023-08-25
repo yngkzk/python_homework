@@ -29,7 +29,6 @@ layout.addWidget(button3, 1, 0, 1, 2)
 layout.addWidget(button4, 2, 0)
 layout.addWidget(button5, 2, 1)
 
-window.setBox()
 window.setLayout(layout)
 window.show()
 window.show()
