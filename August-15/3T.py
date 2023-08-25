@@ -14,6 +14,11 @@ def quick_sort(val, key=None):
     pivot = value[0]
     less = list(filter(lambda x: key(x) < key(pivot), value))
     equals = [i for i in value if i == pivot]
+    # здесь ошибка:               ^^^^^^^^^^^
+    # сравнивать нужно так же, с помощью key: if key(i) == key(pivot)
+    # пример: сортировка слов по длине, если key=len
+    # если опорный элемент "Жан", то в список equals должны попасть все слова, равные ему по длине
+    
     more = list(filter(lambda x: key(x) > key(pivot), value))
     result = quick_sort(less) + equals + quick_sort(more)
     return result
