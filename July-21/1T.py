@@ -12,7 +12,7 @@ def get_diag_words(element=None):
         word += ' '
 
         for y in range(len(element)):
-            length = len(element[i])
+            length = len(element[y])
             index = length - y - 1
             word += element[y][index]
         return word
