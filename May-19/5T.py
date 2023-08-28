@@ -8,3 +8,4 @@ res2 = n1 - n2
 res3 = n1 * n2
 res4 = n1 / n2
 print("The result of your action: ", "Addition: ", res1, "Subtraction: ", res2, "Multiplication: ", res3, "Division:", res4)
+

@@ -3,3 +3,4 @@ number_req = input("Enter the number: ")
 number = int(number_req)
 result = number ** 2
 print("Your number squared is: ", result)
+
