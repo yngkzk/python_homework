@@ -6,3 +6,4 @@ cut1 = user_in[:2]
 cut2 = user_in[-2:]
 result = cut1 + "-" + cut2
 print("This is your cut word: ", result)
+

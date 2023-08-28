@@ -7,3 +7,4 @@ user_in_numb = input("Enter how many symbols you want to see: ")
 counts = int(user_in_numb)
 result = (string * counts)[:counts]
 print("This is your result: ", result)
+

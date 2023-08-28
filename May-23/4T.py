@@ -6,3 +6,4 @@ cut1 = user_in_str[:symb]
 cut2 = user_in_str[-symb:]
 result = cut1 + " " + cut2
 print("This is your cut word: ", result)
+

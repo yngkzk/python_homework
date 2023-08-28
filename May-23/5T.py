@@ -8,3 +8,4 @@ words_symbs1 = user_in_str[:1]
 words_symbs2 = user_in_str[-1:]
 result = words_symbs1 + stars + words_symbs2
 print("This is your censored word: ", result)
+
