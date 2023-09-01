@@ -1,6 +1,7 @@
 import logger
-
 Logger = logger.Logger
+
+#VN: А лучше просто написать: from logger import Logger
 
 log = Logger(Logger.DEBUG)
 # log = Logger(Logger.DEBUG, file='myapp.log')
