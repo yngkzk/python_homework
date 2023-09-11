@@ -8,3 +8,4 @@ final_cost = cost - (cost * discount / 100)
 form = "You have to pay: $%.2f" 
 result = form % final_cost
 print(result)
+

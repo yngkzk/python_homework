@@ -7,3 +7,4 @@ f = lastn * 10000
 t = fourn
 result = f + t
 print("Your result is: ", result)
+

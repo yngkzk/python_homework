@@ -8,3 +8,4 @@ sym3 = user_in_str[2]
 s3 = ord(sym3)
 result = s1 + s2 + s3
 print("Your sum of codes of all symbols of this word: ", result)
+

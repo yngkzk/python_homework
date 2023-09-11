@@ -2,3 +2,4 @@
 user_in_str = input("Enter there your word: ")
 words_len = len(user_in_str)
 print("Number of symbols in this word: ", words_len)
+

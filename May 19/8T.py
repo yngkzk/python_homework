@@ -4,3 +4,4 @@ n = int(tdn)
 result = n % 100
 result2 = result // 10
 print("The middle of the number equals: ", result2)
+

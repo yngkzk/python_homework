@@ -8,3 +8,4 @@ time = str(time)
 form = "You created your cinema ticket! The film '%s', in the cinema '%s' - booked for this time '%s'."
 data = form % (films_name, cinemas_name, time)
 print(data)
+

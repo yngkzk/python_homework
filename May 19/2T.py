@@ -5,3 +5,4 @@ number = int(users_numb)
 number2 = int(users_numb2)
 result = (number + number2) / 2
 print("Your average number is: ", result)
+

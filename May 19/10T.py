@@ -6,3 +6,4 @@ x = 250
 y = m // 10
 result = 250 + y
 print("Your wage is: $", result, sep="")
+
