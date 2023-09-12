@@ -29,8 +29,12 @@ def show_actions(scene):
         if "WHEN" in action:
             if "LACK" in action["WHEN"]:
                 if action["WHEN"]["LACK"] not in inventory:
-                    print(' -> ', action["NAME"])
-            if "HAVE" in action["WHEN"]:
+                    if "MISSED" in action["WHEN"]:
+                        if action["WHEN"]["MISSED"] not in scenes:
+                            print(' -> ', action["NAME"])
+                    else:
+                        print(' -> ', action["NAME"])
+            elif "HAVE" in action["WHEN"]:
                 if action["WHEN"]["HAVE"] in inventory:
                     print(' -> ', action["NAME"])
         else:
@@ -51,7 +55,7 @@ def check_action(scene, action_name):
 
 
 def perform_action(effect):
-    global current_scene, quest, inventory, have_item
+    global current_scene, quest, inventory, scenes
     if current_scene == 'SCENE_0':
         index = 1
     else:
@@ -61,25 +65,31 @@ def perform_action(effect):
             when_option = quest["game"][current_scene]["ACTIONS"][index]["WHEN"]
             if "LACK" in when_option:
                 item_found = False
+
                 for i in range(len(inventory)):
                     if inventory[i] == when_option["LACK"]:
                         item_found = True
                         break
+
                 if item_found is False:
                     print(effect["ALERT"])
-                    if effect["COLLECT"]:
+                    if "COLLECT" in when_option:
                         inventory.append(effect["COLLECT"])
+
             if "HAVE" in when_option:
-                for i in range(len(inventory)):
+                for i in range(len(inventory)):  # Можно было записать без цикла for, а через условие in
                     if inventory[i] == when_option["HAVE"]:
                         print(effect["ALERT"])
                         break
                 if "DISPOSE" in effect:
                     inventory.remove(effect["DISPOSE"])
+
     if "GO" in effect:
         current_scene = effect["GO"]
+        scenes.append(effect["GO"])
 
 
+scenes = []
 inventory = []
 current_scene = 'SCENE_0'
 
