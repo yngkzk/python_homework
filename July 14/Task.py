@@ -25,9 +25,9 @@ def is_game_end(scene):
 
 def show_actions(scene):
     print('Что будете делать?')
-    for action in quest["game"][scene]["ACTIONS"]:
-        if
-        print(' -> ', action["NAME"])
+    # for action in quest["game"][scene]["ACTIONS"]:
+        # if
+        # print(' -> ', action["NAME"])
 
 
 def get_user_action():

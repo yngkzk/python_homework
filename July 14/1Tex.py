@@ -44,7 +44,11 @@ def check_action(scene, action_name):
 
 def perform_action(effect):
     global current_scene
-    current_scene = effect["go"]
+    if effect["ALERT"] in current_scene:
+        print(effect["ALERT"])
+    else:
+        if effect["GO"]:
+            current_scene = effect["GO"]
 
 
 current_scene = 'start'

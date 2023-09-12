@@ -1,7 +1,7 @@
 import json
 import time
 
-with open('kolobok.json', 'r', encoding='utf-8') as my_file:
+with open('kolobok.json', encoding='utf-8') as my_file:
     quest = json.load(my_file)
 
 greeting = f'''
@@ -9,7 +9,6 @@ greeting = f'''
 Авторы игры: {quest["game_info"]["AUTHOR"]}
 Версия игры: {quest["game_info"]["VERSION"]}
 '''
-
 print(greeting)
 
 
@@ -26,8 +25,16 @@ def is_game_end(scene):
 
 def show_actions(scene):
     print('Что будете делать?')
-    for current_action in quest["game"][scene]["ACTIONS"]:
-        print(' -> ', current_action["NAME"])
+    for action in quest["game"][scene]["ACTIONS"]:
+        if "WHEN" in action:
+            if "LACK" in action["WHEN"]:
+                if action["WHEN"]["LACK"] not in inventory:
+                    print(' -> ', action["NAME"])
+            if "HAVE" in action["WHEN"]:
+                if action["WHEN"]["HAVE"] in inventory:
+                    print(' -> ', action["NAME"])
+        else:
+            print(' -> ', action["NAME"])
 
 
 def get_user_action():
@@ -41,29 +48,43 @@ def check_action(scene, action_name):
     for allowed_action in quest["game"][scene]["ACTIONS"]:
         if allowed_action["NAME"] == action_name:
             return allowed_action["EFFECT"]
-        if "WHEN" in allowed_action and allowed_action["WHEN"] in quest["game"][scene]["ACTIONS"]:
-            if allowed_action["WHEN"]["LACK"] and allowed_action["WHEN"]["MISSED"]:
-                print(allowed_action["EFFECT"]["ALERT"])
-                global inventory
-                inventory.append(allowed_action["EFFECT"]["COLLECT"])
-                allowed_action["EFFECT"]
-                get_user_action()
-                return
-# разобраться с 'when'
-# тут надо поделить лак и миссед
-# тут менять надо
 
 
-def perform_action(current_effect):
-    global current_scene
-    current_scene = current_effect["GO"]
+def perform_action(effect):
+    global current_scene, quest, inventory, have_item
+    if current_scene == 'SCENE_0':
+        index = 1
+    else:
+        index = 2
+    if "ALERT" in effect:
+        if quest["game"][current_scene]["ACTIONS"][index]["WHEN"]:
+            when_option = quest["game"][current_scene]["ACTIONS"][index]["WHEN"]
+            if "LACK" in when_option:
+                item_found = False
+                for i in range(len(inventory)):
+                    if inventory[i] == when_option["LACK"]:
+                        item_found = True
+                        break
+                if item_found is False:
+                    print(effect["ALERT"])
+                    if effect["COLLECT"]:
+                        inventory.append(effect["COLLECT"])
+            if "HAVE" in when_option:
+                for i in range(len(inventory)):
+                    if inventory[i] == when_option["HAVE"]:
+                        print(effect["ALERT"])
+                        break
+                if "DISPOSE" in effect:
+                    inventory.remove(effect["DISPOSE"])
+    if "GO" in effect:
+        current_scene = effect["GO"]
 
 
 inventory = []
 current_scene = 'SCENE_0'
 
-
 while True:
+    time.sleep(3)
     print(f'\n{"-" * 50} \n')
     show_description(current_scene)
     if is_game_end(current_scene):
