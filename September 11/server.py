@@ -7,6 +7,11 @@ class UDP_server:
 
     def __init__(self, port=9900):
         self.port = port
+        # VN: адрес и сокет лучше всего тоже прописывать в конструкторе:
+        # self.address = ...
+        # self.socket = ...
+        # self.socket.bind(...) и тд
+        # и тогда не нужно будет явно свойство класса задавать (5 строка)
 
     def start(self):
 
@@ -14,7 +19,7 @@ class UDP_server:
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         server_socket.bind(server_address)
 
-        while True:
+        while True:  # VN: лучше написать while self.is_enabled:  А в методе stop сбрасывать self.is_enabled в False
             data, addr = server_socket.recvfrom(1024)
             message = data.decode(encoding="UTF-8")
             print(f'Message received from {addr}: {message}')
