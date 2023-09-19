@@ -1,11 +1,11 @@
-from server import UDP_server
-from client import UDP_client
+from server import UdpServer
+from client import UdpClient
 
 # Не работает
 
 if __name__ == '__main__':
-    server = UDP_server(9900)
-    client = UDP_client('127.0.0.1', 9900)
+    server = UdpServer(9900)
+    client = UdpClient('127.0.0.1', 9900)
 
     server.start()
     client.send('Hallo')

@@ -1,7 +1,7 @@
 import socket
 
 
-class UDP_client:
+class UdpClient:
     address = 'localhost'
     port = 0
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -21,6 +21,6 @@ class UDP_client:
 
 
 if __name__ == '__main__':
-    client = UDP_client('127.0.0.1', 9900)
+    client = UdpClient('127.0.0.1', 9900)
     client.send('hallo')
     client.receive()
