@@ -1,4 +1,4 @@
-def binary_search(given_list, item):
+def binary_search(given_list, item):  # O(log n)
     low = 0
     high = len(given_list)-1
 
@@ -16,4 +16,3 @@ def binary_search(given_list, item):
 
 my_list = [1, 3, 5, 7, 9]
 print(binary_search(my_list, 3))
-
