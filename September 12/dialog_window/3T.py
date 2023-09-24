@@ -53,6 +53,8 @@ class MainWindow(QWidget):
         message = self.textEditor.toPlainText()
         self.send_message.emit(message)
         self.lock.release()  # Не знаю как правильнее реализовать этот метод
+        #VN: Всё правильно. Только не генерируйте сигнал из заблокированного участка кода.
+        # Сначала делайте release блокировок и мьютексов, а потом emit сигнала.
 
 
 if __name__ == '__main__':
