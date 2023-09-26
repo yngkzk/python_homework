@@ -51,9 +51,10 @@ class MainWindow(QWidget):
         self.lock.acquire()
         print("Кнопка нажата!")
         message = self.textEditor.toPlainText()
+        self.lock.release()
         self.send_message.emit(message)
-        self.lock.release()  # Не знаю как правильнее реализовать этот метод
-        #VN: Всё правильно. Только не генерируйте сигнал из заблокированного участка кода.
+
+        # VN: Всё правильно. Только не генерируйте сигнал из заблокированного участка кода.
         # Сначала делайте release блокировок и мьютексов, а потом emit сигнала.
 
 
