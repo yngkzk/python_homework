@@ -22,6 +22,7 @@ class Hacker:
             self.loop = False
             return 
 
+    #VN: сам декоратор нужно вынести за пределы класса! Сделать или отдельной функцией или вынести в отдельный модуль.
     def measuretime(func):
         def wrapper(*args, **kwargs):
             start_time = time.time()
