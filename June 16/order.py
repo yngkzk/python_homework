@@ -24,7 +24,7 @@ class Order:
         return message
 
     def show_info(self):
-        message = 'Dear %s, welcome to %s, your room and id - %s, %s.' % (self.visitor_name, self.hotel_name,
+        message = 'Dear %s, welcome to %s, your room and id - %s, %s. \n' % (self.visitor_name, self.hotel_name,
                                                                           self.room, self.id)
         message += 'INFO: date from - %s, to - %s. IIN: %s' % (self.date_from, self.date_to, self.visitor_iin)
         return message
